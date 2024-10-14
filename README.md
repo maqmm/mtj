@@ -26,7 +26,7 @@ python3 MDTOJSON.py -i path/to/input/md -o path/to/output/json
 | _files settings_ |
 | `-i`, `--input` | **(required)** Path to input .md file, details about structure this file [here](#input-structure). |
 | `-o`, `--output` | **(required)** Path to output .json file. |
-| `--flypie` | Generate JSON menu for [Fly-Pie](https://github.com/Schneegans/Fly-Pie), by default for [kando](https://github.com/kando-menu/kando) |
+| `--flypie` | Generate JSON menu for [Fly-Pie](https://github.com/Schneegans/Fly-Pie), by default for [kando](https://github.com/kando-menu/kando). |
 | `-p`, `--print` | Print output .json file with run cmd. |
 | _menu settings_ |
 | `-n`, `--name` | Name for output menu, by default `Converted menu`. |
@@ -35,4 +35,15 @@ python3 MDTOJSON.py -i path/to/input/md -o path/to/output/json
 
 ## Input structure
 
-_soon..._
+This script accepts .md or any text file as input. Each line in such a file is a menu element. Which element is nested in which is determined by the number of indents (`<\t>`), if there are 0 indents, you will see these elements when you open the menu, 1 indent will be nested in an element with 0 indentation higher in the file.
+
+Let's examples:
+
+```
+A
+B
+C
+D
+```
+The simplest menu of four elements that have no indents, all of which will appear when the menu starts.
+![Example1](/img/ex1.png)
