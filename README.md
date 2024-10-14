@@ -14,6 +14,8 @@ git clone https://github.com/maqmm/mtj.git
 
 ...and go to usage
 
+***
+
 ## Usage
 
 ```
@@ -33,6 +35,17 @@ python3 MDTOJSON.py -i path/to/input/md -o path/to/output/json
 | `-e`, `--emoji` | Emoji for menu, by default 🥝. |
 | `-sc`, `--shortcut` | Menu execite shortcut, by default NUM3. |
 
+***
+
+## Output
+
+| [kando](https://github.com/kando-menu/kando) | [Fly-Pie](https://github.com/Schneegans/Fly-Pie) |
+| ---         | ---         |
+| ![OutKando](/img/outk.png) | ![OutFP](/img/outfp.png) |
+| In the case of kando, you need to find the menus.json configuration file. See the location for each OS [here](https://github.com/kando-menu/kando/blob/main/docs/config-files.md#the-config-files). Open it and add the converted menu separated by commas to the menus array, so your customized menus will be saved. | In the case of Fly-Pie, we export the output file using the button on the screen, before doing this, do not forget to move the menu to stash so that they are saved, or upload them in advance using the export button (to the right of button 2). <br>__!!! BE SURE__ to use [the flag](#usage) `--flypie` to create a fly-pie menu|
+
+***
+
 ## Input structure
 
 This script accepts .md or any text file as input. Each line in such a file is a menu element. Which element is nested in which is determined by the number of indents (`<\t>`), if there are 0 indents, you will see these elements when you open the menu, 1 indent will be nested in an element with 0 indentation higher in the file.
@@ -45,9 +58,6 @@ This script accepts .md or any text file as input. Each line in such a file is a
 | `<a>-1-359</a>` | The angle [-1 - 359] of the menu item. (If you specify -1, the element will be positioned automatically. In cando too, but the parameter will not be inserted into the element, so as not to observe locks in the editor.) |
 | `<t>TITLE</t>` | When using a tag, the text inside it is not used to assemble the final text from the sum of the texts of all parents. But the text inside it will be used to name the element. More details in the [second example](#nested-and-spaces-and-newlines). |
 | `<p>PERMANENT</p>` | The opposite of the `<t>TITLE</t>` tag. If this tag is present when assembling the final text, ONLY its contents will be inserted (or the sum of their contents, if there are several of them). It is advisable to use it in finite elements, but no one limits it. |
-
-
-
 
 __Let's examples:__
 
@@ -93,7 +103,8 @@ It is important that nesting of objects is done using tab indents, not spaces, b
 
 If you want to receive the same elements at each stage of selection, the easiest way is to copy copies of them under each parent element. But this script implements autocopying. The two examples below give the same result, but at what cost... =)
 
-An unspoken rule follows from this. If you do not want to use autocopy, then it makes sense to place elements of the same level and one parent higher if they have children and lower if they do not. Since with two or more elements of the same level in a row, if the next ones have children, they will be copied to all elements (brothers) above.
+> [!TIP]
+> An unspoken rule follows from this. If you do not want to use autocopy, then it makes sense to place elements of the same level and one parent higher if they have children and lower if they do not. Since with two or more elements of the same level in a row, if the next ones have children, they will be copied to all elements (brothers) above.
 
 | ![Example3a](/img/ex3a.png) | ![Example3b](/img/ex3b.png) |
 | ---         | ---         |
