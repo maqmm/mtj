@@ -273,6 +273,7 @@ def main():
     parser.add_argument('-sc', '--shortcut', default='default', required=False, help='Menu execite shortcut')
     parser.add_argument('--flypie', action='store_true', help='JSON menu for Fly-Pie, by default for Kando')
     parser.add_argument('-p', '--print', action='store_true', help='Print output JSON to cmd out')
+    parser.add_argument('-e', '--emoji', default='🥝', required=False, help='Emoji for menu')
     args = parser.parse_args()
 
     # read md
@@ -293,7 +294,7 @@ def main():
     else:
         shortcut_default = args.shortcut
 
-    output_menu = [convert_json_to_menu(result, name_menu=args.name, shortcut_menu=shortcut_default, fly_pie_flag = args.flypie)]
+    output_menu = [convert_json_to_menu(result, name_menu=args.name, icon_menu=args.emoji, shortcut_menu=shortcut_default, fly_pie_flag = args.flypie)]
     if args.print:
         print(json.dumps(output_menu, ensure_ascii=False, indent=2))
 
