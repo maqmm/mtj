@@ -42,7 +42,7 @@ python3 MDTOJSON.py -i path/to/input/md -o path/to/output/json
 | [kando](https://github.com/kando-menu/kando) | [Fly-Pie](https://github.com/Schneegans/Fly-Pie) |
 | ---         | ---         |
 | ![OutKando](/img/outk.png) | ![OutFP](/img/outfp.png) |
-| In the case of kando, you need to find the menus.json configuration file. See the location for each OS [here](https://github.com/kando-menu/kando/blob/main/docs/config-files.md#the-config-files). Open it and add the converted menu separated by commas to the menus array, so your customized menus before will be saved. | In the case of Fly-Pie, we import the output file using the button on the screen, before doing this, do not forget to move the menu to stash so that they are saved, or upload them in advance using the export button (to the right of button 2). <br>__!!! BE SURE__ to use [the flag](#usage) `--flypie` to create a fly-pie menu|
+| In the case of kando, you need to find the menus.json configuration file. See the location for each OS [here](https://kando.menu/config-files/#location-of-the-configuration-files). Open it and add the converted menu separated by commas to the menus array, so your customized menus before will be saved. | In the case of Fly-Pie, we import the output file using the button on the screen, before doing this, do not forget to move the menu to stash so that they are saved, or upload them in advance using the export button (to the right of button 2). <br>__!!! BE SURE__ to use [the flag](#usage) `--flypie` to create a fly-pie menu|
 
 ***
 
